@@ -1,0 +1,169 @@
+.banner-wrap
+	.banner
+		.banner-overlay
+			background: linear-gradient(color-rgba($black,0.1),color-rgba($black,0.3))
+		.banner-caption
+			text-align: center
+			text-shadow: 0px 3px 20px color-rgba($black,0.5)
+			.project-name
+				+fs(36rem)
+				font-weight: 700
+				color: $white
+				text-transform: uppercase
+				margin-bottom: 10px
+				line-height: 1.5
+			.project-number
+				font-weight: 700
+				+fs(14rem)
+				color: $white
+				text-align: center
+				margin-bottom: 20px
+				&:after
+					content: ''
+					display: inline-block
+					vertical-align: middle
+					margin-left: 5px
+					width: 20px
+					height: 3px
+					background: $white
+			.project-des
+				+fs(14rem)
+				color: $white
+				// font-weight: 300
+				margin-bottom: 30px
+				line-height: 1.5
+			.link
+				display: inline-block
+				+fs(13rem)
+				font-weight: 500
+				text-transform: uppercase
+				padding: 10px 30px
+				margin-bottom: 30px
+				border: 1px solid $white
+				color: $white
+				+transition(all 0.3s)
+				box-shadow: 0px 3px 20px color-rgba($black,0.1)
+				&:hover
+					background: $white
+					color: $black
+		.dione
+			.tp-arr-imgwrapper
+				width: 150px
+				+flexbox
+				justify-content: center
+				align-items: center
+				align-content: center
+			// 	+pos(abs, 0 null 0 0)
+			// 	right: 0
+			// 	width: unset
+			// 	height: unset
+			// 	+pos(abs, 0 null 0 0)
+			// 	right: 0
+			// 	width: unset
+			// 	height: unset
+			// 	+transform(translateX(0))
+			// 	opacity: 1
+			// 	visibility: visible
+			.tp-arr-imgholder
+				filter: brightness(30%)
+				background-size: cover
+				width: 150px
+				// +pos(abs, 0 null 0 0)
+				// right: 0
+				// width: unset
+				// height: unset
+				// visibility: visible
+				// opacity: 1
+				// +transform(translateX(0))
+				// background-size: cover
+				+flexbox
+				justify-content: center
+				align-items: center
+			.project-nav
+				color: $white
+				font-weight: 500
+				+fs(14rem)
+				text-transform: uppercase
+				z-index: 5
+				+transition(all,0.3s)
+				opacity: 0
+				visibility: hidden
+			&.tparrows
+				width: 150px
+				&:hover
+					background: none
+					.project-nav
+						opacity: 1
+						visibility: visible
+						margin: 0
+			&.tp-leftarrow
+				.project-nav
+					margin-left: -100px
+					+transform(rotateZ(-90deg))
+				.tp-arr-imgwrapper
+					// padding-right: 70px
+				.tp-arr-imgholder
+					// -webkit-clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%)
+					// clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%)
+			&.tp-rightarrow
+				.project-nav
+					margin-right: -100px
+					+transform(rotateZ(90deg))
+				.tp-arr-imgwrapper
+					// padding-left: 70px
+				.tp-arr-imgholder
+					// -webkit-clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%)
+					// clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%)
+		.zeus 
+			+flexbox
+			justify-content: center
+			align-items: center
+			.tp-bullet
+				width: 40px
+				height: 20px
+				+bor-rad(0)
+				border: none
+				+flexbox
+				justify-content: center
+				align-items: center
+				align-content: center
+				&:before, &:after
+					display: none
+					+bor-rad(0)
+					+pos(static,unset)
+					+transform(scale(1))
+				&:after
+					content: ''
+					display: block
+					width: 40px
+					height: 1px
+					background: $white
+					+transition(all,0.3s)
+				.tp-bullet-title
+					top: -8px
+					left: auto
+					right: 3px
+					width: auto
+				.tp-bullet-imageoverlay
+					display: none
+				.tp-bullet-image
+					bottom: 30px
+					filter: brightness(80%)
+				&:hover, &.selected
+					&:after
+						height: 12px
+				&:hover
+					.tp-bullet-image
+						bottom: 50px
+					.tp-bullet-title
+						opacity: 0
+						visibility: hidden
+				&.selected
+					.tp-bullet-title
+						opacity: 1
+						visibility: visible
+		.tp-bannertimer
+			top: auto
+			bottom: 0
+			background: $white
+			opacity: 0.1

@@ -1,0 +1,15 @@
+extends _layout/layout
+
+block variables
+	- var title = 'PVInvest'
+	- var bodyclass = 'homepage'
+
+block css
+
+block body 
+	include _layout/header
+	include _layout/banner
+	main
+		//- .container
+		include _layout/ct-home
+	include _layout/footer

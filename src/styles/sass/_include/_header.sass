@@ -1,0 +1,158 @@
+header
+	+pos(fix, 0 0 null 0)
+	z-index: 1000
+	.language
+		float: left
+		+flexbox
+		height: 90px
+		align-items: center
+		align-content: center
+		a
+			display: block
+			width: 20px
+			text-align: center
+			+fs(13rem)
+			font-weight: 600
+			color: $white
+			text-transform: uppercase
+			+transition(all,0.5s)
+			+ a
+				margin-left: 10px
+			&.active
+				+fs(0)
+				&:after
+					content: ''
+					display: inline-block
+					width: 20px
+					height: 3px
+					background: $white
+					+transition(all,0.5s)
+	.sitelogo
+		+pos(abs,0 null 0 50%)
+		+transform(translateX(-50%))
+		+flexbox
+		height: 90px
+		z-index: 3
+		justify-content: center
+		align-items: center
+		align-content: center
+		a
+			display: block
+		img
+			height: 70px
+			filter: grayscale(100%) brightness(600%)
+	.overlay
+		+pos(fix, 0 null 0 0)
+		right: 0
+		background: $black
+		opacity: 0.5
+		z-index: 900
+		display: none
+	.btn-showmenu
+		+pos(rel,null)
+		z-index: 1100
+		float: right
+		color: $white
+		border: 1px solid color-rgba($white,0.5)
+		width: 40px
+		height: 40px
+		margin: 30px 0
+		cursor: pointer
+		+transition(all,0.3s)
+		&:before, &:after
+			content: ''
+			height: 2px
+			background: $white
+			+transition(all,0.3s)
+		&:before
+			+pos(abs, 12px 10px null 10px)
+		&:after
+			+pos(abs, null 10px 12px 10px)
+		span
+			&:before, &:after
+				content: ''
+				+pos(abs, 50% 10px null 10px)
+				height: 2px
+				background: $white
+				+transform(translateY(-50%))
+				+transition(all,0.3s)
+		&:hover
+			border-color: $white
+		&.active
+			&:before
+				+transform(translateY(-10px))
+				opacity: 0
+			&:after
+				+transform(translateY(10px))
+				opacity: 0
+			span
+				&:before
+					+transform(translateY(-50%)rotateZ(45deg))
+				&:after
+					+transform(translateY(-50%)rotateZ(-45deg))
+	.menu
+		+pos(fix, 0 0 0 null)
+		width: 500px
+		+transform(translateX(100%))
+		z-index: 1000
+		background: color-rgba($black,0.8)
+		+transition(all,0.5s)
+		text-align: right
+		&.open
+			+transform(translateX(0%))
+		.menu-content
+			height: 100vh
+			+flexbox
+			align-items: center
+			align-content: center
+		.menuwrap
+			width: 100%
+		ul.menulink
+			> li
+				+pos(rel,null)
+				&:after
+					content: ''
+					display: block
+					width: 0px
+					height: 3px
+					background: $white
+					+pos(abs, 45% 0 null null)
+					+transition(all,0.5s)
+				> a
+					display: block
+					+fs(28rem)
+					font-weight: 700
+					line-height: 1
+					color: $white
+					text-transform: uppercase
+					padding: 5px 70px
+					opacity: 0.5
+				&:hover, &.active
+					&:after
+						width: 30px
+					a
+						opacity: 1
+		.menu-footer
+			+pos(abs, null 70px 30px null)
+		.contact-info
+			margin-bottom: 20px
+			.company
+				font-weight: 600
+				+fs(15rem)
+				color: color-rgba($white,0.5)
+				margin-bottom: 10px
+			ul
+				li
+					color: color-rgba($white,0.3)
+					+fs(13rem)
+					line-height: 1.5
+					font-weight: 300
+					.fa
+						display: none
+					a
+						color: color-rgba($white,0.3)
+						&:hover
+							color: color-rgba($white,0.8)
+		.copyright
+			color: color-rgba($white,0.3)
+			font-weight: 300
